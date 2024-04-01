@@ -5,7 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class EarthquakeView {
+public class ViewController {
+
+    @GetMapping("")
+    public String showMain(Model model){
+        return "index";
+    }
 
     @GetMapping("/earthquakes")
     public String showEarthquakeList(Model model) {
