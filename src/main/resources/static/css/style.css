@@ -31,6 +31,7 @@ th, td {
     text-align: center;
 }
 
+
 th {
     background-color: #f2f2f2;
     color: #333;
@@ -54,5 +55,20 @@ a:hover {
 }
 
 .container {
+    display: flex; /* Flexbox 레이아웃 사용 */
     overflow-x: auto;
+    justify-content: space-between; /* 자식 요소들 사이에 공간을 균등하게 배분 */
+    align-items: center; /* 세로 축(center)을 기준으로 자식 요소들을 정렬 */
+    padding: 10px; /* 컨테이너 내부 여백 */
+}
+
+.search-form {
+    display: flex; /* 폼 내 요소들을 한 줄로 배열 */
+    flex-wrap: wrap; /* 필요한 경우 요소들을 다음 줄로 넘김 */
+    gap: 10px; /* 요소들 사이의 간격 */
+}
+
+.sort-buttons {
+    display: flex; /* 정렬 버튼을 한 줄로 배열 */
+    gap: 10px; /* 버튼 사이의 간격 */
 }
