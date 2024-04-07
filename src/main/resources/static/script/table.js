@@ -1,24 +1,4 @@
 export let earthquake; // earthquake 변수를 전역 변수로 정의합니다.
-import { map } from './map.js';
-
-// 지도에 지진 데이터를 표시하는 함수
-export function fetchToMap(year = 2024, minMagnitude = 7.0, orderBy = 'time') {
-    fetch(`/api/earthquakes?year=${year}&minMagnitude=${minMagnitude}&orderBy=${orderBy}`)
-        .then(response => response.json())
-        .then(data => {
-            earthquake = data;
-            console.log(`year = ${year}, minMag = ${minMagnitude}`)
-            console.log('Earthquake 데이터:', data);
-            data.forEach(earthquake => {
-                if (earthquake.latitude && earthquake.longitude) {
-                    L.marker([earthquake.latitude, earthquake.longitude]).addTo(map)
-                        .bindPopup(`Magnitude: ${earthquake.magnitude}<br>Location: ${earthquake.location}`);
-                }
-            });
-        })
-        .catch(error => console.error('Error fetching earthquake data:', error));
-}
-
 // 테이블에 지진 데이터를 표시하는 함수
 export function fetchToTable(year = 2024, minMagnitude = 7.0, orderBy = 'time') {
     fetch(`/api/earthquakes?year=${year}&minMagnitude=${minMagnitude}&orderBy=${orderBy}`)

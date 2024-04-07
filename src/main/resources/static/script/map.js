@@ -1,7 +1,6 @@
-import { fetchToMap } from './earthquakes.js';
-import { fetchVolcanoes } from './volcanoes.js';
-
 export let map; // 지도 객체를 저장할 전역 변수
+export let earthquake; // 지진 데이터를 저장할 전역 변수
+export let volcano; // 화산 데이터를 저장할 전역 변수
 
 // 지도 초기화 함수
 export function initMap() {
@@ -22,6 +21,43 @@ export function clearAllMarkers() {
         }
     });
     console.log("clear 호출")
+}
+
+// 지도에 지진 데이터를 표시하는 함수
+export function fetchToMap(year = 2024, minMagnitude = 7.0, orderBy = 'time') {
+    fetch(`/api/earthquakes?year=${year}&minMagnitude=${minMagnitude}&orderBy=${orderBy}`)
+        .then(response => response.json())
+        .then(data => {
+            earthquake = data;
+            console.log(`year = ${year}, minMag = ${minMagnitude}`)
+            console.log('Earthquake 데이터:', data);
+            data.forEach(earthquake => {
+                if (earthquake.latitude && earthquake.longitude) {
+                    L.marker([earthquake.latitude, earthquake.longitude]).addTo(map)
+                        .bindPopup(`Magnitude: ${earthquake.magnitude}<br>Location: ${earthquake.location}`);
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching earthquake data:', error));
+}
+
+// 화산 데이터 조회 및 처리 함수
+export function fetchVolcanoes() {
+    console.log(`fetchVolcanoes 호출됨`);
+    fetch(`/api/volcanoes`)
+        .then(response => response.json())
+        .then(data => {
+            volcano = data; // 받은 데이터를 volcanoes 변수에 저장합니다.
+            console.log('volcano 데이터:', data);
+            // Correct the property names and display relevant info
+            data.forEach(volcano => {
+                if(volcano.lat && volcano.lng) {
+                    L.marker([volcano.lat, volcano.lng]).addTo(map)
+                        .bindPopup(`Volcano Name: ${volcano.volcanoName}<br>Elevation: ${volcano.elevM}m`);
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching volcano data:', error));
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -53,3 +89,5 @@ document.getElementById('showVolcanoes').addEventListener('click', function() {
 document.getElementById('clearMarkers').addEventListener('click', function() {
     clearAllMarkers(); // 모든 마커 제거 함수 호출
 });
+
+

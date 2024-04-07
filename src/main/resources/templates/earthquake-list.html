@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Earthquake Data</title>
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <!-- External CSS -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -30,12 +28,9 @@
 <div id="earthquakeTableContainer" class="earthquake-table-container">
   <!-- JavaScript will insert the earthquake data table here -->
 </div>
-
-<!-- Leaflet JavaScript -->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <!-- Earthquakes JavaScript Module -->
 <script type="module">
-  import { fetchToTable } from './script/earthquakes.js';
+  import { fetchToTable } from './script/table.js';
 
   document.getElementById('searchButton').addEventListener('click', () => {
     const year = document.getElementById('year').value;
