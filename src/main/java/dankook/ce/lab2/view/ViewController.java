@@ -14,7 +14,16 @@ public class ViewController {
 
     @GetMapping("/earthquakes")
     public String showEarthquakeList(Model model) {
-        // "earthquake-list"는 Thymeleaf 템플릿의 이름입니다.
         return "earthquake-list";
+    }
+
+    @GetMapping("/volcanoes")
+    public String showVolcanoList(Model model) {
+        return "volcano-list";
+    }
+
+    @GetMapping("/map")
+    public String showMap(Model model) {
+        return "map";
     }
 }

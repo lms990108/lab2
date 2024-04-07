@@ -1,3 +1,4 @@
+/* 기본 스타일 */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -18,6 +19,7 @@ h1 {
     color: #5d5d5d;
 }
 
+/* 테이블 스타일 */
 table {
     width: 90%;
     margin: 1rem auto;
@@ -30,7 +32,6 @@ th, td {
     border: 1px solid #ddd;
     text-align: center;
 }
-
 
 th {
     background-color: #f2f2f2;
@@ -45,6 +46,7 @@ tr:hover {
     background-color: #f1f1f1;
 }
 
+/* 링크 스타일 */
 a {
     color: #06c;
     text-decoration: none;
@@ -54,21 +56,54 @@ a:hover {
     text-decoration: underline;
 }
 
+/* 레이아웃 스타일 */
 .container {
-    display: flex; /* Flexbox 레이아웃 사용 */
+    display: flex;
     overflow-x: auto;
-    justify-content: space-between; /* 자식 요소들 사이에 공간을 균등하게 배분 */
-    align-items: center; /* 세로 축(center)을 기준으로 자식 요소들을 정렬 */
-    padding: 10px; /* 컨테이너 내부 여백 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
 .search-form {
-    display: flex; /* 폼 내 요소들을 한 줄로 배열 */
-    flex-wrap: wrap; /* 필요한 경우 요소들을 다음 줄로 넘김 */
-    gap: 10px; /* 요소들 사이의 간격 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .sort-buttons {
-    display: flex; /* 정렬 버튼을 한 줄로 배열 */
-    gap: 10px; /* 버튼 사이의 간격 */
+    display: flex;
+    gap: 10px;
+}
+
+/* 버튼 스타일 (Geo Events 버튼) */
+.buttons-container {
+    text-align: center; /* 컨테이너 내부 텍스트(여기서는 버튼)를 중앙 정렬 */
+    margin: 20px 0; /* 상하 여백 추가 */
+}
+
+.geo-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin: 0 10px; /* 버튼 사이 간격 조정 */
+}
+
+.geo-button:hover {
+    background-color: #3e8e41;
+}
+
+.geo-button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
