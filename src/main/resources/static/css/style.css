@@ -1,178 +1,186 @@
-/* 기본 스타일 */
+/* 기본 스타일 설정: 웹 페이지의 기본 글꼴, 마진, 패딩, 배경색 및 텍스트 색상을 정의합니다. */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 기본 글꼴 설정 */
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    background-color: #f7f7f7; /* 배경색 설정 */
+    color: #333; /* 기본 텍스트 색상 설정 */
 }
 
+/* 제목 스타일: 제목의 텍스트 정렬, 상단 마진, 색상을 정의합니다. */
 h1 {
-    text-align: center;
-    margin-top: 1rem;
-    color: #5d5d5d;
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin-top: 1rem; /* 상단 마진 설정 */
+    color: #5d5d5d; /* 텍스트 색상 설정 */
 }
 
-/* 링크 스타일 */
+/* 링크 스타일: 링크의 기본 색상과 텍스트 장식을 설정하고, 호버 상태일 때의 스타일을 정의합니다. */
 a {
-    color: #06c;
-    text-decoration: none;
+    color: #06c; /* 링크 기본 색상 */
+    text-decoration: none; /* 밑줄 제거 */
 }
-
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* 호버 시 밑줄 표시 */
 }
 
-/* 레이아웃 스타일 */
+/* 레이아웃 스타일: 컨테이너 요소의 표시 방식, 정렬 방식, 패딩, 오버플로우 처리 방식을 정의합니다. */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    overflow-x: auto;
+    display: flex; /* Flexbox 레이아웃 사용 */
+    justify-content: center; /* 가로 축 중앙 정렬 */
+    align-items: center; /* 세로 축 중앙 정렬 */
+    padding: 10px; /* 내부 패딩 설정 */
+    overflow-x: auto; /* 가로 스크롤 가능하도록 설정 */
 }
 
+/* 폼과 버튼 그룹의 레이아웃 설정: flexbox를 사용하여 래핑되고 간격이 있는 레이아웃 구성 */
 .search-form,
 .sort-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: flex; /* Flexbox 레이아웃 사용 */
+    flex-wrap: wrap; /* 내용이 넘칠 경우 다음 줄로 이동 */
+    gap: 10px; /* 요소 간 간격 설정 */
 }
 
-/* 버튼 스타일 */
+/* 버튼 컨테이너 스타일: 버튼을 담는 컨테이너의 텍스트 정렬과 마진을 설정합니다. */
 .buttons-container {
-    text-align: center;
-    margin: 20px 0;
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin: 20px 0; /* 상하 마진 설정 */
 }
 
+/* 지오 버튼 스타일: 배경 색상, 패딩, 글꼴 크기, 텍스트 색상, 테두리, 모서리 둥글기, 그림자, 마진, 커서 스타일 등을 설정합니다. */
 .geo-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    margin: 0 10px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    padding: 10px 20px; /* 내부 패딩 설정 */
+    font-size: 16px; /* 글꼴 크기 */
+    color: #fff; /* 텍스트 색상 */
+    background-color: #4CAF50; /* 배경 색상 */
+    border: none; /* 테두리 제거 */
+    border-radius: 15px; /* 모서리 둥글기 */
+    box-shadow: 0 9px #999; /* 그림자 효과 */
+    margin: 0 10px; /* 좌우 마진 */
+    cursor: pointer; /* 커서 모양 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    text-decoration: none; /* 텍스트 장식 제거 */
+    display: inline-block; /* 인라인 블록 요소로 표시 */
 }
-
 .geo-button:hover {
-    background-color: #3e8e41;
+    background-color: #3e8e41; /* 호버 시 배경 색상 변경 */
 }
-
 .geo-button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+    background-color: #3e8e41; /* 활성 상태의 배경 색상 */
+    box-shadow: 0 5px #666; /* 활성 상태의 그림자 효과 */
+    transform: translateY(4px); /* 활성 상태에서 약간 아래로 이동 */
 }
 
-/* 이미지 링크 스타일 */
+/* 이미지 링크 스타일: 이미지 링크의 마진과 호버 상태에서 이미지의 불투명도 설정 */
 .image-link {
-    display: inline-block;
-    margin: 10px;
+    display: inline-block; /* 인라인 블록 요소로 표시 */
+    margin: 10px; /* 마진 설정 */
 }
-
 .image-link:hover .geo-image {
-    opacity: 0.8;
+    opacity: 0.8; /* 호버 시 이미지 불투명도 변경 */
 }
 
-/* 이미지와 설명을 담는 컨테이너 */
+/* 이미지 컨테이너 스타일: 이미지와 설명을 담는 컨테이너의 텍스트 정렬, 디스플레이 방식, 마진 설정 */
 .image-container {
-    text-align: center;
-    display: inline-block;
-    margin: 0 10px;
+    text-align: center; /* 텍스트 중앙 정렬 */
+    display: inline-block; /* 인라인 블록 요소로 표시 */
+    margin: 0 10px; /* 좌우 마진 설정 */
 }
 
-/* 이미지 스타일 */
+/* 이미지 스타일: 이미지의 너비, 높이, 테두리, 디스플레이 방식, 자동 마진 설정 */
 .geo-image {
-    width: 250px;
-    height: auto;
-    border: none;
-    display: block;
-    margin: 0 auto;
+    width: 250px; /* 이미지 너비 */
+    height: auto; /* 이미지 높이 자동 조절 */
+    border: none; /* 테두리 제거 */
+    display: block; /* 블록 요소로 표시 */
+    margin: 0 auto; /* 상하 마진 없음, 좌우 마진 자동 */
 }
 
-/* 이미지 아래 텍스트 설명 스타일 */
+/* 이미지 아래 텍스트 설명 스타일: 설명 텍스트의 상단 마진과 글꼴 크기 설정 */
 .image-description {
-    margin-top: 10px;
-    font-size: 1em;
+    margin-top: 10px; /* 상단 마진 설정 */
+    font-size: 1em; /* 글꼴 크기 */
 }
 
-/* 지도 컨테이너 스타일 */
+/* 지도 컨테이너 스타일: 지도의 높이, 너비, 하단 마진 설정 */
 #mapid {
-    height: 600px;
-    width: 100%;
-    margin-bottom: 2rem;
+    height: 600px; /* 높이 설정 */
+    width: 100%; /* 너비 설정 (부모 요소의 100%) */
+    margin-bottom: 2rem; /* 하단 마진 설정 */
 }
 
+/* 지도와 관련 컨트롤을 담는 컨테이너의 스타일: 텍스트 정렬, 상단 마진 설정 */
 .map-container {
-    text-align: center;
-    margin-top: 10px;
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin-top: 10px; /* 상단 마진 설정 */
 }
 
+/* 컨트롤 컨테이너 스타일: flexbox를 사용해 요소를 중앙 정렬하고, 래핑하며, 간격 설정 */
 .controls-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 10px;
+    display: flex; /* Flexbox 레이아웃 사용 */
+    justify-content: center; /* 가로 축 중앙 정렬 */
+    flex-wrap: wrap; /* 내용이 넘칠 경우 다음 줄로 이동 */
+    gap: 5px; /* 요소 간 간격 */
+    margin-bottom: 10px; /* 하단 마진 설정 */
 }
 
+/* 필터 그룹 스타일: 필터 옵션을 담는 그룹의 디스플레이 방식, 아이템 정렬, 간격 설정 */
 .filter-group {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    display: flex; /* Flexbox 레이아웃 사용 */
+    align-items: center; /* 아이템 세로 축 중앙 정렬 */
+    gap: 5px; /* 요소 간 간격 */
 }
 
+/* 필터 그룹 내의 라벨, 인풋, 셀렉트 요소 스타일: 마진, 패딩, 글꼴 크기 설정 */
 .filter-group > label,
 .filter-group > input,
 .filter-group > select {
-    margin: 0;
-    padding: 5px;
-    font-size: 0.9em;
+    margin: 0; /* 마진 제거 */
+    padding: 5px; /* 패딩 설정 */
+    font-size: 0.9em; /* 글꼴 크기 */
 }
 
+/* 버튼 스타일: 패딩, 커서 포인터, 글꼴 크기 설정 */
 button {
-    padding: 5px 15px;
-    cursor: pointer;
-    font-size: 0.9em;
+    padding: 5px 15px; /* 패딩 설정 */
+    cursor: pointer; /* 커서 모양 */
+    font-size: 0.9em; /* 글꼴 크기 */
 }
 
+/* 인풋과 셀렉트 요소 스타일: 패딩 설정 */
 input, select {
-    padding: 2px 5px;
+    padding: 2px 5px; /* 패딩 설정 */
 }
 
+/* 버튼 너비와 줄바꿈 방지를 위한 스타일 설정 */
 button {
-    width: auto;
-    white-space: nowrap;
+    width: auto; /* 너비 자동 조절 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
-/* 테이블 스타일 */
+/* 테이블 스타일: 너비, 자동 마진, 테두리 축소, 그림자 효과 설정 */
 table {
-    width: 90%;
-    margin: 1rem auto;
-    border-collapse: collapse;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    width: 90%; /* 너비 설정 */
+    margin: 1rem auto; /* 자동 마진으로 중앙 정렬 */
+    border-collapse: collapse; /* 셀 테두리 합치기 */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); /* 그림자 효과 */
 }
 
+/* 테이블 헤더와 셀 스타일: 패딩, 테두리, 텍스트 정렬 설정 */
 th, td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    text-align: center;
+    padding: 12px 15px; /* 내부 패딩 */
+    border: 1px solid #ddd; /* 테두리 설정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
 }
 
+/* 테이블 헤더 배경색 설정 */
 th {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2; /* 배경 색상 */
 }
 
+/* 테이블 행의 배경색 설정: 짝수 행과 호버 상태일 때의 색상 */
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* 짝수 행 배경 색상 */
 }
-
 tr:hover {
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* 호버 상태의 배경 색상 */
 }

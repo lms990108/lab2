@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>화산 정보 테이블</title>
-    <!-- External CSS -->
+    <!-- 외부 CSS 파일 링크. 이 파일은 웹 페이지의 스타일을 정의합니다. -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
+<!-- 웹 페이지의 제목입니다. -->
 <h1>화산 정보 테이블</h1>
+<!-- 화산 정보를 표시할 테이블이 들어갈 컨테이너입니다. -->
 <div id="volcanoTableContainer" class="volcano-table-container">
+    <!-- JavaScript를 통해 동적으로 화산 정보 테이블이 이곳에 생성됩니다. -->
 </div>
 
-<!-- Volcanoes JavaScript Module -->
+<!-- 화산 정보를 가져와 테이블 형태로 표시하는 JavaScript 모듈을 가져옵니다. -->
 <script type="module">
-    import { fetchVolcanoesToTable } from './script/table.js';
-    fetchVolcanoesToTable();
+    import { fetchVolcanoesToTable } from './script/table.js'; // 테이블 형태로 화산 정보를 가져오는 함수를 임포트합니다.
+    fetchVolcanoesToTable(); // 웹 페이지 로딩 시 화산 정보를 자동으로 가져와 표시합니다.
 </script>
 
 </body>

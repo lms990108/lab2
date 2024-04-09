@@ -3,27 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Geo Events Routing</title>
+  <!-- 외부 CSS 파일을 연결합니다. 스타일 정의는 'css/style.css' 파일에 있습니다. -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- 페이지의 제목입니다. 사용자에게 페이지의 목적을 알려줍니다. -->
 <h1>지질 정보 확인하기</h1>
+<!-- 여러 이미지 "버튼"을 포함하는 컨테이너입니다. 각 버튼은 다른 페이지로의 링크 역할을 합니다. -->
 <div class="buttons-container">
-  <!-- 지도 페이지로 라우팅하는 이미지 "버튼" -->
+  <!-- 지도 페이지로 이동하는 이미지 "버튼"입니다. 사용자가 지도를 클릭하면 해당 페이지로 이동합니다. -->
   <div class="image-container">
     <a href="/map" class="image-link">
       <img src="images/earth1.jpeg" alt="Map" class="geo-image">
     </a>
     <p class="image-description">지도에서 화산, 지진 위치 확인하기</p>
   </div>
-  <!-- 지진 페이지로 라우팅하는 이미지 "버튼" -->
+  <!-- 지진 정보 페이지로 이동하는 이미지 "버튼"입니다. 사용자가 지진 이미지를 클릭하면 해당 페이지로 이동합니다. -->
   <div class="image-container">
     <a href="/earthquakes" class="image-link">
       <img src="images/earthquake1.jpeg" alt="Earthquakes" class="geo-image">
     </a>
     <p class="image-description">지진 정보 리스트 확인하기</p>
   </div>
-  <!-- 화산 페이지로 라우팅하는 이미지 "버튼" -->
+  <!-- 화산 정보 페이지로 이동하는 이미지 "버튼"입니다. 사용자가 화산 이미지를 클릭하면 해당 페이지로 이동합니다. -->
   <div class="image-container">
     <a href="/volcanoes" class="image-link">
       <img src="images/volcano1.jpeg" alt="Volcanoes" class="geo-image">

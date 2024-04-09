@@ -3,30 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>화산/지진 위치정보</title>
+  <!-- Leaflet.js CSS 파일을 CDN에서 가져옵니다. 지도 표시에 필요한 기본 스타일을 제공합니다. -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- 사용자 정의 CSS 스타일. 웹 페이지의 다른 요소들에 대한 스타일을 정의합니다. -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- 페이지의 제목 -->
 <h1>화산 정보 테이블</h1>
+<!-- 지도와 관련된 컨트롤을 포함하는 컨테이너 -->
 <div class="map-container">
+  <!-- 필터링 옵션과 작업 버튼을 포함하는 컨트롤 섹션 -->
   <div class="controls-container">
-    <!-- Filter options -->
+    <!-- 필터링 옵션 -->
     <div class="filter-group">
       <label for="year">년도:</label>
-      <input type="number" id="year" value="2024">
+      <input type="number" id="year" value="2024"> <!-- 사용자가 년도를 입력할 수 있는 필드 -->
       <label for="minMagnitude">최소 규모:</label>
-      <input type="number" id="minMagnitude" step="0.1" value="7.0">
+      <input type="number" id="minMagnitude" step="0.1" value="7.0"> <!-- 사용자가 최소 지진 규모를 입력할 수 있는 필드 -->
     </div>
-    <!-- Action buttons -->
-    <button id="showEarthquakes">지진 위치 정보</button>
-    <button id="showVolcanoes">화산 위치 정보</button>
-    <button id="clearMarkers">마커 지우기</button>
+    <!-- 작업을 수행하는 버튼 -->
+    <button id="showEarthquakes">지진 위치 정보</button> <!-- 지진 정보를 지도에 표시하는 버튼 -->
+    <button id="showVolcanoes">화산 위치 정보</button> <!-- 화산 정보를 지도에 표시하는 버튼 -->
+    <button id="clearMarkers">마커 지우기</button> <!-- 지도의 모든 마커를 제거하는 버튼 -->
   </div>
+  <!-- 지도를 표시할 div 요소 -->
   <div id="mapid"></div>
 </div>
 
+<!-- Leaflet.js 스크립트 파일을 CDN에서 가져옵니다. 지도 표시에 필요한 기능을 제공합니다. -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- 사용자 정의 지도 관련 스크립트. 지도의 초기화와 지진 및 화산 정보를 표시하는 로직을 포함합니다. -->
 <script type="module" src="script/map.js"></script>
 </body>
 </html>

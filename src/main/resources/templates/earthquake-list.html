@@ -3,44 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Earthquake Data</title>
-  <!-- External CSS -->
+  <!-- 외부 CSS 파일을 링크합니다. 'css/style.css' 경로에서 CSS 파일을 찾아 스타일을 적용합니다. -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
+<!-- 웹 페이지의 제목을 정의합니다. -->
 <h1>화산/지진 위치 정보</h1>
+<!-- 사용자 입력을 받기 위한 컨테이너와 폼을 정의합니다. -->
 <div class="container">
+  <!-- 폼: 사용자로부터 년도, 최소 규모, 정렬 기준을 입력받습니다. -->
   <form id="searchForm" class="search-form">
-    <label for="year">년도:</label>
+    <label for="year">년도:</label> <!-- 년도 입력 필드 -->
     <input type="number" id="year" name="year" value="2024" min="1970" max="2100">
-    <label for="minMagnitude">최소 규모:</label>
+    <label for="minMagnitude">최소 규모:</label> <!-- 최소 규모 입력 필드 -->
     <input type="number" id="minMagnitude" name="minMagnitude" value="7.0" min="0" step="0.1">
-    <label for="orderBy">정렬 기준:</label>
+    <label for="orderBy">정렬 기준:</label> <!-- 정렬 기준 선택 필드 -->
     <select id="orderBy">
       <option value="time">최신순</option>
       <option value="time-asc">오래된순</option>
       <option value="magnitude">큰 규모순</option>
       <option value="magnitude-asc">작은 규모순</option>
     </select>
-    <button type="button" id="searchButton">검색</button>
+    <button type="button" id="searchButton">검색</button> <!-- 검색 버튼 -->
   </form>
 </div>
+<!-- 지진 데이터를 표시할 테이블을 담을 컨테이너 -->
 <div id="earthquakeTableContainer" class="earthquake-table-container">
-  <!-- JavaScript will insert the earthquake data table here -->
+  <!-- JavaScript를 통해 지진 데이터 테이블이 여기에 삽입됩니다. -->
 </div>
-<!-- Earthquakes JavaScript Module -->
+<!-- 지진 데이터를 가져오고 표시하는 기능을 담은 JavaScript 모듈을 연결합니다. -->
 <script type="module">
-  import { fetchEarthquakesToTable } from './script/table.js';
+  import { fetchEarthquakesToTable } from './script/table.js'; // 지진 데이터를 테이블로 표시하는 함수를 가져옵니다.
 
   document.getElementById('searchButton').addEventListener('click', () => {
-    const year = document.getElementById('year').value;
-    const minMagnitude = document.getElementById('minMagnitude').value;
-    const orderBy = document.getElementById('orderBy').value;
-    fetchEarthquakesToTable(year, minMagnitude, orderBy);
+    const year = document.getElementById('year').value; // 사용자가 입력한 년도 값을 가져옵니다.
+    const minMagnitude = document.getElementById('minMagnitude').value; // 사용자가 입력한 최소 규모 값을 가져옵니다.
+    const orderBy = document.getElementById('orderBy').value; // 사용자가 선택한 정렬 기준을 가져옵니다.
+    fetchEarthquakesToTable(year, minMagnitude, orderBy); // 입력받은 값을 기반으로 지진 데이터를 가져와 테이블로 표시하는 함수를 호출합니다.
   });
 
-  // Initialize with default values
-  fetchEarthquakesToTable();
+  fetchEarthquakesToTable(); // 페이지가 로드될 때 기본 값으로 지진 데이터를 가져와 테이블로 표시합니다.
 </script>
 
 </body>

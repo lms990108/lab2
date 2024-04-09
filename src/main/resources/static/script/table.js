@@ -1,17 +1,18 @@
-export let earthquake; // earthquake 변수를 전역 변수로 정의합니다.
-// 테이블에 지진 데이터를 표시하는 함수
+export let earthquake; // 전역 변수 earthquake를 선언합니다. 이 변수는 지진 데이터를 저장하기 위해 사용됩니다.
+
+// 지진 데이터를 가져와서 테이블로 표시하는 함수입니다.
 export function fetchEarthquakesToTable(year = 2024, minMagnitude = 7.0, orderBy = 'time') {
-    fetch(`/api/earthquakes?year=${year}&minMagnitude=${minMagnitude}&orderBy=${orderBy}`)
-        .then(response => response.json())
+    fetch(`/api/earthquakes?year=${year}&minMagnitude=${minMagnitude}&orderBy=${orderBy}`) // 지진 데이터 API 호출
+        .then(response => response.json()) // 응답을 JSON 형태로 변환
         .then(data => {
-            earthquake = data;
-            console.log('Earthquake 데이터:', data);
-            displayEarthquakeTable(data); // 데이터를 테이블에 표시하는 별도의 함수 호출
+            earthquake = data; // 변환된 데이터를 전역 변수 earthquake에 저장
+            console.log('Earthquake 데이터:', data); // 콘솔에 지진 데이터 로그 출력
+            displayEarthquakeTable(data); // 지진 데이터를 테이블 형태로 표시하는 함수 호출
         })
-        .catch(error => console.error('Error fetching earthquake data:', error));
+        .catch(error => console.error('Error fetching earthquake data:', error)); // 에러 발생 시 콘솔에 에러 메시지 출력
 }
 
-// 지진 데이터를 웹 페이지에 테이블로 표시하는 함수
+// 지진 데이터를 웹 페이지의 테이블로 표시하는 함수입니다.
 export function displayEarthquakeTable(earthquakes) {
     let html = `<table>
         <tr>
@@ -19,7 +20,7 @@ export function displayEarthquakeTable(earthquakes) {
             <th>Location</th>
             <th>Magnitude</th>
             <th>Details</th>
-        </tr>`;
+        </tr>`; // 테이블 헤더 생성
 
     earthquakes.forEach(eq => {
         html += `
@@ -28,27 +29,26 @@ export function displayEarthquakeTable(earthquakes) {
                 <td>${eq.location}</td>
                 <td>${eq.magnitude}</td>
                 <td><a href="${eq.url}" target="_blank">More Info</a></td>
-            </tr>`;
+            </tr>`; // 각 지진 데이터에 대한 행 추가
     });
 
-    html += `</table>`;
+    html += `</table>`; // HTML 테이블 닫기
 
-    // 테이블 HTML을 'earthquake-table-container' div에 삽입합니다.
-    document.querySelector('.earthquake-table-container').innerHTML = html;
+    document.querySelector('.earthquake-table-container').innerHTML = html; // 생성된 HTML을 웹 페이지의 지정된 위치에 삽입
 }
 
-// 가정: 화산 데이터를 가져오는 API URL이 '/api/volcanoes' 라고 할 때
+// 화산 데이터를 가져와서 테이블로 표시하는 함수입니다.
 export function fetchVolcanoesToTable() {
-    fetch('/api/volcanoes')
-        .then(response => response.json())
+    fetch('/api/volcanoes') // 화산 데이터 API 호출
+        .then(response => response.json()) // 응답을 JSON 형태로 변환
         .then(data => {
-            console.log('Volcano 데이터:', data);
-            displayVolcanoTable(data);
+            console.log('Volcano 데이터:', data); // 콘솔에 화산 데이터 로그 출력
+            displayVolcanoTable(data); // 화산 데이터를 테이블 형태로 표시하는 함수 호출
         })
-        .catch(error => console.error('Error fetching volcano data:', error));
+        .catch(error => console.error('Error fetching volcano data:', error)); // 에러 발생 시 콘솔에 에러 메시지 출력
 }
 
-// 화산 데이터를 웹 페이지에 테이블로 표시하는 함수
+// 화산 데이터를 웹 페이지의 테이블로 표시하는 함수입니다.
 function displayVolcanoTable(volcanoes) {
     let html = `<table>
         <tr>
@@ -57,7 +57,7 @@ function displayVolcanoTable(volcanoes) {
             <th>Longitude</th>
             <th>Elevation (m)</th>
             <th>Observatory</th>
-        </tr>`;
+        </tr>`; // 테이블 헤더 생성
 
     volcanoes.forEach(volcano => {
         html += `
@@ -67,12 +67,10 @@ function displayVolcanoTable(volcanoes) {
                 <td>${volcano.lng}</td>
                 <td>${volcano.elevM}</td>
                 <td>${volcano.obsAbbr}</td>
-            </tr>`;
+            </tr>`; // 각 화산 데이터에 대한 행 추가
     });
 
-    html += `</table>`;
+    html += `</table>`; // HTML 테이블 닫기
 
-    // 테이블 HTML을 'volcanoTableContainer' div에 삽입합니다.
-    document.querySelector('.volcano-table-container').innerHTML = html;
+    document.querySelector('.volcano-table-container').innerHTML = html; // 생성된 HTML을 웹 페이지의 지정된 위치에 삽입
 }
-

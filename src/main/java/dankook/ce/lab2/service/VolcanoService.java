@@ -19,15 +19,16 @@ public class VolcanoService {
     /**
      * 화산 데이터를 조회합니다.
      *
-     * @return 조회된 화산 데이터를 담은 Flux<VolcanoDto>
+     * @return 조회된 화산 데이터 목록 (Flux<VolcanoDto>)
      */
     public Flux<VolcanoDto> getVolcanoes() {
         String uriTemplate = "/wwvolcanoes"; // 엔드포인트 변경
 
+        // WebClient를 사용하여 화산 데이터 API 호출
         return webClient.get()
                 .uri(uriTemplate)
                 .retrieve()
-                .bodyToMono(String.class)
-                .flatMapMany(body -> Flux.fromIterable(VolcanoDto.parseVolcanoData(body)));
+                .bodyToMono(String.class) // 응답 본문을 String으로 변환 (Mono)
+                .flatMapMany(body -> Flux.fromIterable(VolcanoDto.parseVolcanoData(body))); // String을 VolcanoDto 객체 목록 (Flux)으로 변환
     }
 }
