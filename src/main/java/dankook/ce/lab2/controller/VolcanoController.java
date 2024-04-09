@@ -11,12 +11,13 @@ import reactor.core.publisher.Flux;
 public class VolcanoController {
     private final VolcanoService volcanoService;
 
+    // VolcanoService 의존성 주입
     @Autowired
     public VolcanoController(VolcanoService volcanoService) {
         this.volcanoService = volcanoService;
     }
 
-    // 메소드를 수정하여 VolcanoService를 올바르게 사용하고 Flux<VolcanoDto>를 반환합니다.
+    // '/api/volcanoes' 엔드포인트를 통해 화산 정보 조회 API 제공
     @GetMapping("/api/volcanoes")
     public Flux<VolcanoDto> getVolcanoes() {
         return volcanoService.getVolcanoes();
