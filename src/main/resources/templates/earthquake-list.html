@@ -30,17 +30,17 @@
 </div>
 <!-- Earthquakes JavaScript Module -->
 <script type="module">
-  import { fetchToTable } from './script/table.js';
+  import { fetchEarthquakesToTable } from './script/table.js';
 
   document.getElementById('searchButton').addEventListener('click', () => {
     const year = document.getElementById('year').value;
     const minMagnitude = document.getElementById('minMagnitude').value;
     const orderBy = document.getElementById('orderBy').value;
-    fetchToTable(year, minMagnitude, orderBy);
+    fetchEarthquakesToTable(year, minMagnitude, orderBy);
   });
 
   // Initialize with default values
-  fetchToTable();
+  fetchEarthquakesToTable();
 </script>
 
 </body>

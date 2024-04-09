@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Volcano Data</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+
+<h1>Volcano Data</h1>
+<div id="volcanoTableContainer" class="volcano-table-container">
+</div>
+
+<!-- Volcanoes JavaScript Module -->
+<script type="module">
+    import { fetchVolcanoesToTable } from './script/table.js';
+    fetchVolcanoesToTable();
+</script>
 
 </body>
 </html>
