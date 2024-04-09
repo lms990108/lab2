@@ -2,76 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Geo Events Map</title>
+  <title>화산/지진 위치정보</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    #mapid {
-      height: 600px;
-    }
-    .map-container {
-      text-align: center;
-      margin-top: 10px; /* Reduced margin */
-    }
-    .controls-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 5px; /* Reduced gap */
-      margin-bottom: 10px; /* Reduced margin */
-    }
-    .filter-group {
-      display: flex;
-      align-items: center;
-      gap: 5px; /* Reduced gap */
-    }
-    .filter-group > label,
-    .filter-group > input,
-    .filter-group > select {
-      margin: 0;
-      padding: 5px; /* Reduced padding */
-      font-size: 0.9em; /* Reduced font size */
-    }
-    button {
-      padding: 5px 15px; /* Reduced padding inside the buttons */
-      cursor: pointer; /* Changes cursor to pointer when hovering over buttons */
-      font-size: 0.9em; /* Reduced font size */
-    }
-    /* Styles for inputs and select for consistency */
-    input, select {
-      padding: 2px 5px; /* Reduced padding */
-    }
-    /* Adjust button width to make them smaller */
-    button {
-      width: auto; /* Adjust this to set a specific width if necessary */
-      white-space: nowrap; /* Ensures text in buttons doesn't wrap */
-    }
-  </style>
-
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<h1>화산 정보 테이블</h1>
 <div class="map-container">
   <div class="controls-container">
     <!-- Filter options -->
     <div class="filter-group">
-      <label for="year">Year:</label>
+      <label for="year">년도:</label>
       <input type="number" id="year" value="2024">
-
-      <label for="minMagnitude">Min Magnitude:</label>
+      <label for="minMagnitude">최소 규모:</label>
       <input type="number" id="minMagnitude" step="0.1" value="7.0">
     </div>
-
     <!-- Action buttons -->
-    <button id="showEarthquakes">Show Earthquakes</button>
-    <button id="showVolcanoes">Show Volcanoes</button>
-    <button id="clearMarkers">Clear All Markers</button>
+    <button id="showEarthquakes">지진 위치 정보</button>
+    <button id="showVolcanoes">화산 위치 정보</button>
+    <button id="clearMarkers">마커 지우기</button>
   </div>
-
   <div id="mapid"></div>
 </div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script type="module" src="script/map.js"></script>
-
 </body>
 </html>

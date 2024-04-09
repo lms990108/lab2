@@ -7,16 +7,148 @@ body {
     color: #333;
 }
 
-#mapid {
-    height: 400px;
-    width: 100%;
-    margin-bottom: 2rem;
-}
-
 h1 {
     text-align: center;
     margin-top: 1rem;
     color: #5d5d5d;
+}
+
+/* 링크 스타일 */
+a {
+    color: #06c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 레이아웃 스타일 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+.search-form,
+.sort-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* 버튼 스타일 */
+.buttons-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.geo-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin: 0 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.geo-button:hover {
+    background-color: #3e8e41;
+}
+
+.geo-button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* 이미지 링크 스타일 */
+.image-link {
+    display: inline-block;
+    margin: 10px;
+}
+
+.image-link:hover .geo-image {
+    opacity: 0.8;
+}
+
+/* 이미지와 설명을 담는 컨테이너 */
+.image-container {
+    text-align: center;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* 이미지 스타일 */
+.geo-image {
+    width: 250px;
+    height: auto;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 이미지 아래 텍스트 설명 스타일 */
+.image-description {
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+/* 지도 컨테이너 스타일 */
+#mapid {
+    height: 600px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.map-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.controls-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.filter-group > label,
+.filter-group > input,
+.filter-group > select {
+    margin: 0;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+button {
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+input, select {
+    padding: 2px 5px;
+}
+
+button {
+    width: auto;
+    white-space: nowrap;
 }
 
 /* 테이블 스타일 */
@@ -35,7 +167,6 @@ th, td {
 
 th {
     background-color: #f2f2f2;
-    color: #333;
 }
 
 tr:nth-child(even) {
@@ -44,66 +175,4 @@ tr:nth-child(even) {
 
 tr:hover {
     background-color: #f1f1f1;
-}
-
-/* 링크 스타일 */
-a {
-    color: #06c;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* 레이아웃 스타일 */
-.container {
-    display: flex;
-    overflow-x: auto;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.search-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.sort-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-/* 버튼 스타일 (Geo Events 버튼) */
-.buttons-container {
-    text-align: center; /* 컨테이너 내부 텍스트(여기서는 버튼)를 중앙 정렬 */
-    margin: 20px 0; /* 상하 여백 추가 */
-}
-
-.geo-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    margin: 0 10px; /* 버튼 사이 간격 조정 */
-}
-
-.geo-button:hover {
-    background-color: #3e8e41;
-}
-
-.geo-button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
 }
